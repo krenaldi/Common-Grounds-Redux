@@ -25,5 +25,5 @@ commit.log
 my-keys.md
 config/keys.js
 
-.css.map
-.scss
+src/style/style.css.map
+src/style/style.scss
