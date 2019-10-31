@@ -21,3 +21,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+commit.log
+my-keys.md
+config/keys.js
+
+.css.map
+.scss
