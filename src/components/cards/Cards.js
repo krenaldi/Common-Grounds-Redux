@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Card = ({ img, name, href, color }) => {
+const Card = ({ img, href, color }) => {
     
     return (
         <div
