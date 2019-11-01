@@ -1,5 +1,5 @@
 import React from 'react';
-import Terminal from '../components/displays/Terminal';
+// import Terminal from '../components/displays/Terminal';
 import CardList from '../components/cards/CardList';
 
 const Home = () => {
