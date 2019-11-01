@@ -1,8 +1,8 @@
 const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
-// const passportSetup = require('./config/passport-setup.js');
 const mongoose = require('mongoose');
+const routes = require("./routes");  
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 const FacebookStrategy = require('passport-facebook').Strategy;
@@ -100,6 +100,9 @@ app.get('/auth/logout', (req, res) => {
     user = {};
     res.redirect('/');
 });
+
+// Add routes, both API and view
+app.use(routes);
 
 app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
