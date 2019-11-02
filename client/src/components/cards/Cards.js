@@ -9,16 +9,11 @@ const Card = ({ img, href, color }) => {
             onClick={() => window.location = href}
             >
 
-        {/* <div>
-            <p style={{ margin: 0, textAlign: "left", padding: "5px 0px 5px 10px" }}>
-                {NAME}
-            </p>
-        </div> */}
         <div 
             style={{
                 borderRadius: "50%",
-                minHeight: 75,
-                minWidth: 75, 
+                minHeight: 50,
+                minWidth: 50, 
                 background: `url("${img}") no-repeat center center / 50% ${color}`
             }}/>
         </div>    

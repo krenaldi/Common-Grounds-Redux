@@ -35,42 +35,23 @@ const MenuBar = () => {
 
 {
                 _.isEmpty(userData) &&
-// ANDREAS INSERTED COMMON GROUNDS LOGO
+// COMMON GROUNDS LOGO
                 <a className="logo-btn btn menu-btn MuiSvgIcon-root" href="/">
                     <img
                         src={CommonGroundsLogo}
                         alt="common grounds logo"
                         style={{ height: 30 }}
                     />
+                   
                 </a>
             }
 
-
-
-
-
-
             {
                 _.isEmpty(userData) &&
-// ANDREAS REPLACED PASSPORT LOGO WITH ui icon "PersonIcon" button
                 <Link className="btn menu-btn" to="/" title="Home">
                     <PersonIcon />
                 </Link>
-// ORIGINAL CODE BELOW:
-                // <a className="btn menu-btn disabled" href="/">
-                //     <img
-                //         src={PersonIcon}
-                //         alt="passport.js logo"
-                //         style={{ height: 19 }}
-                //     />
-                // </a>
             }
-
-
-            
-            <Link className="btn menu-btn" to="/" title="Home">
-                <HomeIcon />
-            </Link>
 
             {
                 !_.isEmpty(userData) &&
