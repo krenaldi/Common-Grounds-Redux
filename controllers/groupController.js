@@ -10,11 +10,15 @@ module.exports = {
 }
 
 function CreateGroup( req, res) {
-    var group = new db.Group(req.body);
-    group.encryptPass(req.body.password);
+    console.log(req.body);
+    // res.send("route hit")
+    // var group = new db.Group(req.body);
     db.Group
-    .create(group)
-    .then(dbModel => res.json(dbModel))
+    .create(req.body)
+    .then(dbModel =>{
+        console.log(dbModel);
+        res.json(dbModel)
+    })
     .catch(err => res.status(422).json(err));
  } 
 
@@ -58,14 +62,4 @@ function deleteGroup (req, res) {
     .then(dbModel => res.json(dbModel))
     .catch( er => res.status(422).json(err));
 }
-
-//  function CreateGroup( data) {
-//     db.Group.create( data)
-//         .then(function (dbModel) {
-//             console.log(dbModel)
-//         })
-//         .catch(function (err) {
-//             console.log(err)
-//         })
-// }
 

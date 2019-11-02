@@ -1,14 +1,14 @@
 const router = require("express").Router();
 const groupController = require("../../controllers/groupController");
 
-// Matches with "/api/register"
+// Matches with "/api/group"
 router.route("/")
   .get(groupController.GetAllGroups)
   .post(groupController.CreateGroup);
 
-// Matches with "/api/users/:id"
+// Matches with "/api/group/:id"
 router
-  .route("/:username")
+  .route("/:groupname")
   .get(groupController.deleteGroup)
   .put(groupController.updateGroup)
 
