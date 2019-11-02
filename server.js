@@ -3,12 +3,14 @@ const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const routes = require("./routes");  
+const profileRoutes = require('./routes/profile-routes.js');
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 const FacebookStrategy = require('passport-facebook').Strategy;
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const GithubStrategy = require('passport-github').Strategy;
 const chalk = require('chalk');
+const User = require('./models/user');
 
 const PORT = process.env.PORT || 8080;
 
@@ -17,11 +19,13 @@ const app = express();
 let user = {};
 
 passport.serializeUser((user, cb) => {
-    cb(null, user);
+    cb(null, user.id);
 });
 
-passport.deserializeUser((user, cb) => {
-    cb(null, user);
+passport.deserializeUser((id, cb) => {
+    User.findById(id).then((user) => {
+        cb(null, user);
+    })
 });
 
 app.use(express.urlencoded({ extended: true }));
@@ -49,8 +53,24 @@ passport.use(new GoogleStrategy({
     (accessToken, refreshToken, profile, cb) => {
         console.log(chalk.red(JSON.stringify(profile)));
         user = { ...profile };
-        return cb(null, profile);
-}))
+        User.findOne({ googleId: profile.id }).then((currentUser) => {
+            if(currentUser){
+                // if user already exists
+                console.log('user is: ', currentUser);
+                cb(null, currentUser);
+            } else {
+                // if user doens't exist create user in db
+                new User({
+                    username: profile.displayName,
+                    googleId: profile.id,
+                    photo: profile._json.picture
+                }).save().then((newUser) => {
+                    console.log('new user created: ' + newUser);
+                    cb(null, newUser);
+                });
+            }
+        })
+}));
 
 // Github Strategy
 passport.use(new GithubStrategy({
@@ -75,6 +95,7 @@ app.use(cors());
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use('/profile', profileRoutes);
 
 // Facebook auth routes
 app.get('/auth/facebook', passport.authenticate('facebook'));
@@ -84,7 +105,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook'), (req, res)
 
 // Google auth routes
 app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
-app.get('/auth/google/callback', passport.authenticate('google'), (req, res) => {
+app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), (req, res) => {
     res.redirect('/profile');
 });
 
