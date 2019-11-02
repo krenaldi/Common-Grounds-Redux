@@ -12,6 +12,8 @@ const chalk = require('chalk');
 
 const PORT = process.env.PORT || 8080;
 
+const app = express();
+
 let user = {};
 
 passport.serializeUser((user, cb) => {
@@ -21,6 +23,9 @@ passport.serializeUser((user, cb) => {
 passport.deserializeUser((user, cb) => {
     cb(null, user);
 });
+
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 
 // List Strategies
 // Facebook Strategy
@@ -59,7 +64,6 @@ passport.use(new GithubStrategy({
         return cb(null, profile);
 }))
 
-const app = express();
 
 // create cookie session that expires in a day
 app.use(cookieSession({
@@ -104,6 +108,12 @@ app.get('/auth/logout', (req, res) => {
 // Add routes, both API and view
 app.use(routes);
 
+mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/commonground", {useNewUrlParser : true})
+         .then(() => console.log("MongoDB succesfully connected"))
+         .catch(err => console.log(err));
+
+
 app.listen(PORT, () => {
     console.log('Server listening on: http://localhost:' + PORT);
 });
+

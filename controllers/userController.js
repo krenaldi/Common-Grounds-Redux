@@ -21,7 +21,6 @@ function AddUser( req, res) {
    var user = new db.User(req.body);
    console.log(user);
    console.log(req.body);
-//    user.encryptPass(req.body.password);
    db.User
    .create(user)
    .then(dbModel => res.json(dbModel))

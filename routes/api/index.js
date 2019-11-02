@@ -6,4 +6,4 @@ const groupRoutes = require("./group");
 router.use("/user", userRoutes);
 router.use("/group", groupRoutes);
 
-module.exports = router;
+module.exports = router; 
