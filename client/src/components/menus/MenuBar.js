@@ -1,13 +1,10 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-// import UserDropDown from "./UserDropDown";
 import UserProvider from '../../context/UserProvider';
 import { data } from '../../data';
 import _ from 'lodash';
 import CommonGroundsLogo from '../../res/cglogo.png'
-// import PassportLogo from '../../res/defaultpro.png';
 import PersonIcon from '@material-ui/icons/Person';
-import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import LogoutIcon from '@material-ui/icons/ExitToApp';
 
 
@@ -42,7 +39,6 @@ const MenuBar = () => {
                                 className="btn-icon"
                                 src={loginType.img}
                                 alt={loginType.alt}
-                            // style={{ position: "absolute", top: 20, marginLeft: 3}}
                             />
                         </div>
                     </Link>
