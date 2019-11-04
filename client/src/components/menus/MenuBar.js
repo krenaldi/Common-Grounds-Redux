@@ -32,28 +32,40 @@ const MenuBar = () => {
                 </a>
 
 
-{/* Social Media Icon */}
-                
-                    {
-                        !_.isEmpty(userData) &&
-                        <Link className="btn ppp" to="/profile" title={`${loginType.name} data`}>
-                            <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
-                                <img
-                                    className="btn-icon"
-                                    src={loginType.img}
-                                    alt={loginType.alt}
-                                // style={{ position: "absolute", top: 20, marginLeft: 3}}
-                                />
-                            </div>
-                        </Link>
-                    }
-                
+                {/* Social Media Icon */}
+
+                {
+                    !_.isEmpty(userData) &&
+                    <Link className="btn ppp" to="/profile" title={`${loginType.name} data`}>
+                        <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
+                            <img
+                                className="btn-icon"
+                                src={loginType.img}
+                                alt={loginType.alt}
+                            // style={{ position: "absolute", top: 20, marginLeft: 3}}
+                            />
+                        </div>
+                    </Link>
+                }
+
 
                 {/* Profile Button */}
-                    <Link className="btn menu-btn general-btn" to="/" title="Profile">
-                        <PersonIcon />
-                    </Link>
+                <Link className="btn menu-btn general-btn" to="/" title="Profile">
+                    <PersonIcon />
+                </Link>
 
+                {/* Logout button will appear once user is logged in */}
+                {
+                    !_.isEmpty(userData) &&
+                    <a
+                        className="btn menu-btn"
+                        href={"/auth/logout"}
+                        title="Logout"
+                        style={{ float: "right" }}
+                    >
+                        <LogoutIcon />
+                    </a>
+                }
             </div>
 
         </div>
