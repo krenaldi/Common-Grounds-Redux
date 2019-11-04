@@ -33,10 +33,10 @@ const MenuBar = () => {
 
 
 {/* Social Media Icon */}
-                <a className="ppp">
+                
                     {
                         !_.isEmpty(userData) &&
-                        <Link className="btn " to="/profile" title={`${loginType.name} data`}>
+                        <Link className="btn ppp" to="/profile" title={`${loginType.name} data`}>
                             <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
                                 <img
                                     className="btn-icon"
@@ -47,19 +47,12 @@ const MenuBar = () => {
                             </div>
                         </Link>
                     }
-                </a>
-
-
-
-                {/* Profile Button */}
-                <a className="general-btn btn menu-btn" href="/">
-                    <Link className="btn menu-btn" to="/" title="Profile">
-                        <PersonIcon />
-                    </Link>
-                </a>
-
                 
 
+                {/* Profile Button */}
+                    <Link className="btn menu-btn general-btn" to="/" title="Profile">
+                        <PersonIcon />
+                    </Link>
 
             </div>
 
