@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const routes = require("./routes");  
+const routes = require("./routes");
 const profileRoutes = require('./routes/profile-routes.js');
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
@@ -22,10 +22,8 @@ passport.serializeUser((user, cb) => {
     cb(null, user.id);
 });
 
-passport.deserializeUser((id, cb) => {
-    User.findById(id).then((user) => {
-        cb(null, user);
-    })
+passport.deserializeUser((user, cb) => {
+    cb(null, user);
 });
 
 app.use(express.urlencoded({ extended: true }));
@@ -42,7 +40,7 @@ passport.use(new FacebookStrategy({
         console.log(chalk.blue(JSON.stringify(profile)));
         user = { ...profile };
         return cb(null, profile);
-}))
+    }))
 
 // Google Strategy
 passport.use(new GoogleStrategy({
@@ -54,9 +52,9 @@ passport.use(new GoogleStrategy({
         console.log(chalk.red(JSON.stringify(profile)));
         user = { ...profile };
         User.findOne({ googleId: profile.id }).then((currentUser) => {
-            if(currentUser){
+            if (currentUser) {
                 // if user already exists
-                console.log('user is: ', currentUser);
+                // console.log('user is: ', currentUser);
                 cb(null, currentUser);
             } else {
                 // if user doens't exist create user in db
@@ -70,7 +68,7 @@ passport.use(new GoogleStrategy({
                 });
             }
         })
-}));
+    }));
 
 // Github Strategy
 passport.use(new GithubStrategy({
@@ -82,7 +80,7 @@ passport.use(new GithubStrategy({
         console.log(chalk.gray(JSON.stringify(profile)));
         user = { ...profile };
         return cb(null, profile);
-}))
+    }))
 
 
 // create cookie session that expires in a day
@@ -104,8 +102,8 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook'), (req, res)
 });
 
 // Google auth routes
-app.get('/auth/google', passport.authenticate('google', {scope: ['profile', 'email']}));
-app.get('/auth/google/callback', passport.authenticate('google', {failureRedirect: '/'}), (req, res) => {
+app.get('/auth/google', passport.authenticate('google', { scope: ['profile', 'email'] }));
+app.get('/auth/google/callback', passport.authenticate('google', { failureRedirect: '/' }), (req, res) => {
     res.redirect('/profile');
 });
 
@@ -129,9 +127,9 @@ app.get('/auth/logout', (req, res) => {
 // Add routes, both API and view
 app.use(routes);
 
-mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/commonground", {useNewUrlParser : true})
-         .then(() => console.log("MongoDB succesfully connected"))
-         .catch(err => console.log(err));
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/commonground", { useNewUrlParser: true })
+    .then(() => console.log("MongoDB succesfully connected"))
+    .catch(err => console.log(err));
 
 
 app.listen(PORT, () => {

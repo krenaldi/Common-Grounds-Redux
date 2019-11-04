@@ -11,8 +11,8 @@ const userSchema = new Schema({
   city: String,
   state: String,
   group: [{
-    // type: Schema.Types.ObjectId,
-    // ref: 'group'
+    type: Schema.Types.ObjectId,
+    ref: 'group'
   }]
 });
 
