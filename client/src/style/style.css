@@ -83,11 +83,15 @@ h5 {
   bottom: 0.25em;
 }
 
+.logout {
+  margin-right: 1em;
+}
+
 .btn {
   text-decoration: none;
   color: #0F5C83;
 }
-.btn text {
+.btn-text {
   padding-left: 10px;
   vertical-align: middle;
 }
