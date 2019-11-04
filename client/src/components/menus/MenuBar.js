@@ -7,9 +7,9 @@ import _ from 'lodash';
 import CommonGroundsLogo from '../../res/cglogo.png'
 // import PassportLogo from '../../res/defaultpro.png';
 import PersonIcon from '@material-ui/icons/Person';
-import HomeIcon from '@material-ui/icons/Home';
 import AccountCircleIcon from '@material-ui/icons/AccountCircle';
 import LogoutIcon from '@material-ui/icons/ExitToApp';
+
 
 const MenuBar = () => {
 
@@ -19,58 +19,50 @@ const MenuBar = () => {
 
     return (
         <div className="menu-bar">
-            {
-                !_.isEmpty(userData) &&
-                <Link className="btn menu-btn" to="/profile" title={`${loginType.name} data`}>
-                    <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
-                        <img
-                            className="btn-icon"
-                            src={loginType.img}
-                            alt={loginType.alt}
-                            style={{ position: "absolute", top: 17, paddingLeft: 5 }}
-                        />
-                    </div>
-                </Link>
-            }
 
-{
-                _.isEmpty(userData) &&
-// COMMON GROUNDS LOGO
-                <a className="logo-btn btn menu-btn MuiSvgIcon-root" href="/">
+            <div className="menu-bar-btn-row">
+                <a className="btn menu-btn" href="/">
+                    {/* Common Grounds Logo */}
                     <img
                         src={CommonGroundsLogo}
                         alt="common grounds logo"
                         style={{ height: 30 }}
                     />
-                   
+                    <span className="logo-font">Common Grounds</span>
                 </a>
-            }
 
-            {
-                _.isEmpty(userData) &&
-                <Link className="btn menu-btn" to="/" title="Home">
-                    <PersonIcon />
-                </Link>
-            }
 
-            {
-                !_.isEmpty(userData) &&
-                <Link className="btn menu-btn" to="/profile" title="Profile">
-                    <AccountCircleIcon />
-                </Link>
-            }
-
-            {
-                !_.isEmpty(userData) &&
-                <a
-                    className="btn menu-btn"
-                    href={"/auth/logout"}
-                    title="Logout"
-                    style={{ float: "right" }}
-                >
-                    <LogoutIcon />
+{/* Social Media Icon */}
+                <a className="ppp">
+                    {
+                        !_.isEmpty(userData) &&
+                        <Link className="btn " to="/profile" title={`${loginType.name} data`}>
+                            <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
+                                <img
+                                    className="btn-icon"
+                                    src={loginType.img}
+                                    alt={loginType.alt}
+                                // style={{ position: "absolute", top: 20, marginLeft: 3}}
+                                />
+                            </div>
+                        </Link>
+                    }
                 </a>
-            }
+
+
+
+                {/* Profile Button */}
+                <a className="general-btn btn menu-btn" href="/">
+                    <Link className="btn menu-btn" to="/" title="Profile">
+                        <PersonIcon />
+                    </Link>
+                </a>
+
+                
+
+
+            </div>
+
         </div>
     );
 }
