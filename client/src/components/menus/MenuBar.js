@@ -54,10 +54,9 @@ const MenuBar = () => {
                 {
                     !_.isEmpty(userData) &&
                     <a
-                        className="btn menu-btn"
+                        className="btn menu-btn general-btn logout"
                         href={"/auth/logout"}
                         title="Logout"
-                        style={{ float: "right" }}
                     >
                         <LogoutIcon />
                     </a>
