@@ -28,12 +28,26 @@ const MenuBar = () => {
                     <span className="logo-font">Common Grounds</span>
                 </a>
 
+{/* Logout button will appear once user is logged in */}
+                {
+                    !_.isEmpty(userData) &&
+                    <a
+                        className="btn menu-btn general-btn logout"
+                        href={"/auth/logout"}
+                        title="Logout"
+                    >
+                        <span className="logout-font">Logout</span>
+                        <LogoutIcon />
+                        
+                    </a>
+                }
+
 
                 {/* Social Media Icon */}
 
                 {
                     !_.isEmpty(userData) &&
-                    <Link className="btn ppp" to="/profile" title={`${loginType.name} data`}>
+                    <Link to="/profile" title={`${loginType.name} data`}>
                         <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
                             <img
                                 className="btn-icon"
@@ -50,17 +64,7 @@ const MenuBar = () => {
                     <PersonIcon />
                 </Link>
 
-                {/* Logout button will appear once user is logged in */}
-                {
-                    !_.isEmpty(userData) &&
-                    <a
-                        className="btn menu-btn general-btn logout"
-                        href={"/auth/logout"}
-                        title="Logout"
-                    >
-                        <LogoutIcon />
-                    </a>
-                }
+                
             </div>
 
         </div>

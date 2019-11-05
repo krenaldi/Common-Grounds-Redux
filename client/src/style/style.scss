@@ -33,9 +33,10 @@ $brandBodyText: 'NotoSerif', serif;
     
 }
 
+
 .parallax-home-page {
     background-image: url("../res/friendsgroup.jpg");
-    height: 400px;
+    height: 500px;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -67,24 +68,27 @@ p {
 h5 {
     font-family: $brandBodyText;
     color: $brandgray;
+    margin-bottom: 0;
+    padding-bottom: 40px;
 }
 
 .leftalign {
     text-align: left;
+    margin:0;
+    padding-top: 25px;
 }
 
 .menu-bar {
-    
+    background-image: url("../res/texturebackground.jpg");
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     overflow: hidden;
-    background: white;
+    // background: white;
     padding-left: 5%;
     padding-right: 5%;
-    
-    // &-divider {
-    //     height: .25em;
-    //     background: $brandBeige2;
-    // }
-
 }
 
 .menu-bar-btn-row {
@@ -103,7 +107,8 @@ h5 {
  .general-btn {
     float: right;
     position: relative;
-    bottom: +.25em;
+    bottom: -.25em;
+    margin: 0 20px;
 }
 
 .btn {
@@ -124,8 +129,8 @@ h5 {
             height: 16px;
             vertical-align: middle;
             position: absolute;
-            left: 3.5px;
-            top: 3.5px;
+            left: 4px;
+            top: 4px;
         }
 }
 
@@ -140,7 +145,7 @@ h5 {
     height: 24px;
     border-radius: 50%;
     position: relative;
-    bottom: +.25em;
+    bottom: -.25em;
 
         &:hover{
         opacity: 0.5;
@@ -157,6 +162,18 @@ h5 {
         font-size : 150%;
         bottom: +.3em;
       }
+}
+
+.logout {
+    &-font {
+    color: $brandBeige;
+    font-family: $brandFont;
+    font-weight: bold;
+    display: inline-block;
+    position : relative;
+    font-size : 150%;
+    bottom: +.17em;
+  }
 }
 
 .click-here{
@@ -187,14 +204,12 @@ pre {
     font-size: 30px;
 }
 
-
-
 .card {
     background: white;
     border-radius: 2px;
     display: inline-block;
     margin: 0 1em 0 1em;
-    // box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 19px 38px rgba(0, 0, 0, 0.30), 0 15px 12px rgba(0, 0, 0, 0.22);
     transition: all ease-in-out 0.6s;
 }
 
@@ -203,15 +218,19 @@ pre {
 }
 
 .page {
-    width: 50%;
-    margin: 0 auto;
-    text-align: center;
-
-    &-inside {
-        background: white;
-    }
+    background-image: url("../res/texturebackground.jpg");
+    height: auto;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+        &-inside {
+            margin: 0 auto;
+            text-align: center;
+            width: 50%;
+        }
 }
-
 
 .window {
     width: 80%;
