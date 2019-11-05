@@ -1,6 +1,8 @@
 import React from 'react';
 // import Terminal from '../components/displays/Terminal';
 import CardList from '../components/cards/CardList';
+import Login from '../components/forms/Login';
+import Register from '../components/forms/Register';
 
 const Home = () => {
     return (
@@ -23,6 +25,9 @@ const Home = () => {
             </p>
             <CardList />
             <div style={{ marginBottom: 20 }} />
+            <Login />
+            <Register />
+            
         </div >
     );
 };

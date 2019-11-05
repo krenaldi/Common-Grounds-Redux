@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const groupSchema = new Schema({
+const GroupSchema = new Schema({
     groupname: { type: String, required: true },
      friends: String,
     // [{ 
@@ -12,6 +12,6 @@ const groupSchema = new Schema({
     message: String
 }); 
 
-const Group = mongoose.model("group", groupSchema);
+const Group = mongoose.model("group", GroupSchema);
 
 module.exports = Group;

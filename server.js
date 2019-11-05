@@ -2,7 +2,9 @@ const express = require('express');
 const cors = require('cors');
 const passport = require('passport');
 const mongoose = require('mongoose');
-const routes = require("./routes");  
+const path = require('path');
+const config = require('config');
+// const routes = require("./routes");  
 const keys = require('./config/keys');
 const cookieSession = require('cookie-session');
 const FacebookStrategy = require('passport-facebook').Strategy;
@@ -23,7 +25,7 @@ passport.serializeUser((user, cb) => {
 passport.deserializeUser((user, cb) => {
     cb(null, user);
 });
-
+// bodyparser middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -106,9 +108,20 @@ app.get('/auth/logout', (req, res) => {
 });
 
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
+app.use('/api/users', require('./routes/api/users'));
+app.use('/api/users', require('./routes/api/groups'));
+app.use('/api/users', require('./routes/api/auth'));
 
-mongoose.connect(process.env.MONGODB_URI ||"mongodb://localhost/commonground", {useNewUrlParser : true})
+
+// DB config 
+const db = config.get('mongoURI');
+// connect to mongo
+mongoose.connect(
+    process.env.MONGODB_URI || db, {
+    useNewUrlParser : true,
+    useCreateIndex : true
+})
          .then(() => console.log("MongoDB succesfully connected"))
          .catch(err => console.log(err));
 
