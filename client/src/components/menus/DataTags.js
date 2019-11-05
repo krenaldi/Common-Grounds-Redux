@@ -2,10 +2,13 @@ import React from 'react';
 
 const DataTags = ({ options, onClick, selected }) => {
     const pStyle = {
+        fontFamily: "Arial",
+        color: "#000000",
         overflow: "hidden",
         textOverflow: "ellipsis",
         margin: 2,
-        fontSize: 12
+        fontSize: 14,
+        fontWeight: "bold"
     };
     const allOptions = ["All", ...options];
 
