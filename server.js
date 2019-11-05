@@ -82,7 +82,6 @@ passport.use(new GithubStrategy({
         return cb(null, profile);
     }))
 
-
 // create cookie session that expires in a day
 app.use(cookieSession({
     maxAge: 24 * 60 * 60 * 1000,
