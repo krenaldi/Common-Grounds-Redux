@@ -3,19 +3,19 @@ const Schema = mongoose.Schema;
 
 // Create Schema and Model
 const UserSchema = new Schema({
-  username: {
-    type: String,
-    required: true
-  },
-  email: {
-  type:String,
-  required: true,
-  unique: true
-  },
-  password: {
-    type:String,
-    required: true
-  }
+  username: String,
+  googleId: String,
+  githubId: String,
+  facebookId: String,
+  photo: String,
+  email: String,
+  password: String,
+  city: String,
+  state: String,
+  group: [{
+    type: Schema.Types.ObjectId,
+    ref: 'group'
+  }]
 });
 
 
