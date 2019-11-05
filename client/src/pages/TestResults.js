@@ -7,7 +7,7 @@ import _ from 'lodash';
 
 const LoginMsg = "Uh of, there's nothing to show! Login in to see how much of your personal data tech companies have at their disposal.";
 
-const Profile = () => {
+const TestResults = () => {
     const [selected, setSelected] = useState("All");
     const userData = useContext(UserProvider.context);
     const text = _.isEmpty(userData) ? LoginMsg: "Explore Your Data";
@@ -39,4 +39,4 @@ const Profile = () => {
      );
 };
  
-export default Profile;
+export default TestResults;
