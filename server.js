@@ -39,8 +39,24 @@ passport.use(new FacebookStrategy({
     (accessToken, refreshToken, profile, cb) => {
         console.log(chalk.blue(JSON.stringify(profile)));
         user = { ...profile };
-        return cb(null, profile);
-    }))
+        User.findOne({ googleId: profile.id }).then((currentUser) => {
+            if (currentUser) {
+                // if user already exists
+                // console.log('user is: ', currentUser);
+                cb(null, currentUser);
+            } else {
+                // if user doens't exist create user in db
+                new User({
+                    username: profile.displayName,
+                    facebookId: profile.id,
+                    // photo: profile._json.avatar_url
+                }).save().then((newUser) => {
+                    console.log('new user created: ' + newUser);
+                    cb(null, newUser);
+                });
+            }
+        })
+    }));
 
 // Google Strategy
 passport.use(new GoogleStrategy({
@@ -79,9 +95,24 @@ passport.use(new GithubStrategy({
     (accessToken, refreshToken, profile, cb) => {
         console.log(chalk.gray(JSON.stringify(profile)));
         user = { ...profile };
-        return cb(null, profile);
-    }))
-
+        User.findOne({ googleId: profile.id }).then((currentUser) => {
+            if (currentUser) {
+                // if user already exists
+                // console.log('user is: ', currentUser);
+                cb(null, currentUser);
+            } else {
+                // if user doens't exist create user in db
+                new User({
+                    username: profile.displayName,
+                    githubId: profile.id,
+                    photo: profile._json.avatar_url
+                }).save().then((newUser) => {
+                    console.log('new user created: ' + newUser);
+                    cb(null, newUser);
+                });
+            }
+        })
+    }));
 
 // create cookie session that expires in a day
 app.use(cookieSession({
