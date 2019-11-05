@@ -2,7 +2,7 @@ import React from 'react';
 import Terminal from '../components/displays/Terminal';
 import CardList from '../components/cards/CardList';
 
-const Home = () => {
+const Test = () => {
     return (
         <div className="page" style={{ textAlign: "center"}}>
             <p className="page-title">Simple OAuth with Node</p>
@@ -22,4 +22,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default Test;
