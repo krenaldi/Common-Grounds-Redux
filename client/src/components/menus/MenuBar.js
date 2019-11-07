@@ -46,7 +46,7 @@ const MenuBar = () => {
 
                 {/* Social Media Icon */}
 
-                {
+                {/* {
                     !_.isEmpty(userData) &&
                     <Link to="/profile" title={`${loginType.name} data`}>
                         <div className="app-icon-container" style={{ backgroundColor: loginType.color }}>
@@ -57,7 +57,7 @@ const MenuBar = () => {
                             />
                         </div>
                     </Link>
-                }
+                } */}
 
 
                 {/* Profile Button */}

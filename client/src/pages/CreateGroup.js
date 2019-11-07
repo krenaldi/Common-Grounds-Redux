@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/API";
+import API from "../utils/API";
 import { Link } from "react-router-dom";
 
 class CreateGroup extends Component {
@@ -36,7 +36,7 @@ class CreateGroup extends Component {
     handleFormSubmit = event => {
         event.preventDefault();
         if (this.state.groupname && this.state.friends) {
-            API.saveGroup({
+            API.createGroup({
                 groupname: this.state.groupname,
                 friends: this.state.friends,
                 location: this.state.location,

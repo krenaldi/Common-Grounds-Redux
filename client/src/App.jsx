@@ -8,7 +8,7 @@ import MenuBar from './components/menus/MenuBar';
 // import Data from './pages/DataResults';
 import User from './pages/User';
 import Register from './pages/Register';
-import CreateGroup from './components/forms/CreateGroup';
+import CreateGroup from './pages/CreateGroup';
 
 const App = () => {
     return (
