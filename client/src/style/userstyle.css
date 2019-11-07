@@ -1,0 +1,62 @@
+.container {
+    width: 100%;
+}
+.conatinerLogin, .conatinerRegister{
+    width: 35% ;
+    height:450px;
+    float: left;
+    margin-left: 7%;
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+    color: #0F5C83;
+    font-weight: bolder;
+    border: 1px solid #0F5C83;
+}
+.conatinerRegister{
+    float: right; 
+    margin-right: 7%;   
+}
+.registerForm{
+    padding: 10px;
+}
+
+.loginForm, .registerForm {
+    font-family:'Amatic SC';
+    margin: auto;
+    width:300px;
+
+}
+.inputLogin, .inputRegister{
+    font-family: "arial";
+    width: 100%;
+    margin: 4px 0;
+    padding: 8px 16px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-align: left;
+}
+.inputRegister{
+    margin: 2px 0;
+    padding: 1px 7px;
+}
+.input-fieldLogin{
+    padding-top:15%;
+}
+h2{
+    text-align: center;
+}
+.userbtn{
+    margin-top: 5%;
+    margin-left: 35%;
+    padding: 5%;  
+    color: #ccc;  
+    background:#0F5C83;
+    border: none;
+    border-radius: 5%;
+    font-size: 16px;
+}
+  

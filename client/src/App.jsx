@@ -5,8 +5,10 @@ import UserProvider from './context/UserProvider';
 import Home from './pages/Home';
 import Profile from './pages/Profile';
 import MenuBar from './components/menus/MenuBar';
-import Group from './pages/Group';
-import Data from './pages/DataResults';
+// import Data from './pages/DataResults';
+import User from './pages/User';
+import Register from './pages/Register';
+import CreateGroup from './pages/CreateGroup';
 
 const App = () => {
     return (
@@ -14,8 +16,10 @@ const App = () => {
             <UserProvider>
                 <Route path="/" component={MenuBar} />
                 <Route path="/profile" component={Profile} />
-                <Route path="/group" component={Group} />
-                <Route path="/profile" component={Data} />
+                <Route path="/login" component={User}/>
+                <Route path="/register" component={Register}/>
+                <Route path="/group" component={CreateGroup} />
+                {/* <Route path="/profile" component={Data} /> */}
             </UserProvider>
             <Route exact path="/" component={Home} />
         </Router>
