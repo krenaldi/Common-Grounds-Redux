@@ -1,3 +1,100 @@
+body {
+  background-image: url("../res/texturebackground.jpg");
+  height: auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+body-inside {
+  margin: 0 auto;
+  text-align: center;
+  width: 50%;
+}
+
+button {
+  cursor: pointer;
+}
+
+.conatinerLogin,
+.conatinerRegister {
+  width: 40%;
+  height: auto;
+  margin-top: 50px;
+  border-radius: 25px;
+  color: #3399CC;
+  font-weight: bolder;
+  border: 2px solid #e0d4c5;
+  box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
+}
+
+.conatinerLogin {
+  margin-left: 5%;
+  float: left;
+}
+
+.conatinerRegister {
+  float: right;
+  margin-right: 5%;
+}
+
+.loginForm,
+.registerForm {
+  font-family: "Amatic SC";
+  margin: auto;
+  width: 75%;
+}
+
+.inputLogin,
+.inputRegister {
+  font-family: "arial";
+  width: 100%;
+  margin: 4px 0;
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-align: left;
+}
+.inputLogin:focus,
+.inputRegister:focus {
+  outline: none;
+}
+
+h2 {
+  text-align: center;
+}
+
+.userbtn {
+  width: 100%;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  margin: 30px 0;
+  padding: 10px;
+  color: white;
+  background: #3399CC;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  align-content: center;
+}
+.userbtn:hover {
+  background: #0f5c83;
+}
+.userbtn:focus {
+  outline: none;
+}
+
+label {
+  text-align: left;
+  margin: 0;
+  font-size: 15px;
+  font-family: "NotoSerif", serif;
+  color: #5a5959;
+}
+
 .caption span.border {
   color: white;
   font-family: "Amatic SC", cursive;
@@ -111,6 +208,10 @@ h5 {
 
 .disabled {
   pointer-events: none;
+}
+
+.container {
+  background: red;
 }
 
 .app-icon-container {
