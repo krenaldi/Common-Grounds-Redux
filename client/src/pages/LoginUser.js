@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import Register from './Register';
-import '../style/style.css';
 import API from '../utils/API';
 
 class User extends Component {
@@ -32,7 +31,7 @@ class User extends Component {
                 <div className="conatiner">
                     <div className="conatinerLogin">
                         <form onSubmit={this.handleSubmit} className="loginForm" >
-                            <h2>Login</h2>
+                            <h2 className="formH2">Login</h2>
                             <div className="input-fieldLogin">
                                 <label htmlFor="email">Email</label>
                                 <input type="email" className="inputLogin" name="email" onChange={this.handleInputChange}

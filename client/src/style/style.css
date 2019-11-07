@@ -1,3 +1,63 @@
+.group1 {
+  font-family: "Amatic SC", cursive;
+  color: #0F5C83;
+  margin-left: 50px;
+  width: 100%;
+}
+
+.group2 {
+  font-family: "Amatic SC", cursive;
+  color: #0F5C83;
+  margin-left: 50px;
+  width: 100%;
+}
+
+.profileLabel {
+  color: #5a5959;
+  font-size: 20px;
+  font-family: "NotoSerif", serif;
+}
+
+.welcome {
+  margin-top: 0;
+  padding-top: 0;
+  color: #0F5C83;
+}
+
+.profileInput {
+  font-family: "arial";
+  width: 25%;
+  margin: 4px 20px;
+  padding: 8px 16px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+  text-align: left;
+}
+.profileInput:focus {
+  outline: none;
+}
+
+.profilePage {
+  margin: 0 50px;
+}
+
+.profilePic {
+  margin-top: 50px;
+  margin-left: 5%;
+  border-radius: 25px;
+  width: 300px;
+  height: auto;
+}
+
+.user_profile {
+  font-family: "Amatic SC", cursive;
+  color: #0F5C83;
+  margin: 50px 25px;
+}
+
 body {
   background-image: url("../res/texturebackground.jpg");
   height: auto;
@@ -22,7 +82,7 @@ button {
   height: auto;
   margin-top: 50px;
   border-radius: 25px;
-  color: #3399CC;
+  color: #0F5C83;
   font-weight: bolder;
   border: 2px solid #e0d4c5;
   box-shadow: 0 19px 38px rgba(0, 0, 0, 0.3), 0 15px 12px rgba(0, 0, 0, 0.22);
@@ -63,7 +123,7 @@ button {
   outline: none;
 }
 
-h2 {
+.formH2 {
   text-align: center;
 }
 
@@ -84,6 +144,46 @@ h2 {
   background: #0f5c83;
 }
 .userbtn:focus {
+  outline: none;
+}
+
+.profilebtn {
+  width: 15%;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  margin: 30px 20px;
+  padding: 10px;
+  color: white;
+  background: #3399CC;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  align-content: center;
+}
+.profilebtn:hover {
+  background: #0f5c83;
+}
+.profilebtn:focus {
+  outline: none;
+}
+
+.groupbtn {
+  width: 15%;
+  font-family: "Amatic SC", cursive;
+  font-weight: bold;
+  margin: 30px 0;
+  padding: 10px;
+  color: white;
+  background: #3399CC;
+  border: none;
+  border-radius: 25px;
+  font-size: 20px;
+  align-content: center;
+}
+.groupbtn:hover {
+  background: #0f5c83;
+}
+.groupbtn:focus {
   outline: none;
 }
 
@@ -154,12 +254,6 @@ h5 {
   padding-bottom: 40px;
 }
 
-.leftalign {
-  text-align: left;
-  margin: 0;
-  padding-top: 25px;
-}
-
 .menu-bar {
   background-image: url("../res/texturebackground.jpg");
   height: auto;
@@ -210,10 +304,6 @@ h5 {
   pointer-events: none;
 }
 
-.container {
-  background: red;
-}
-
 .app-icon-container {
   margin: 0 20px;
   float: right;
@@ -249,14 +339,6 @@ h5 {
 
 .click-here {
   color: #0F5C83;
-}
-
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -mox-osx-font-smoothing: grayscale;
-  color: #444444;
 }
 
 pre {
