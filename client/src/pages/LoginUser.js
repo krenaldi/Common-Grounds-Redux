@@ -12,9 +12,9 @@ class User extends Component {
     }
     handleSubmit = event => {
         event.preventDefault();
-         API.loginUser(this.state)
-         .then( res => this.setState({ user: res.data }))
-         .catch(err => console.log(err));
+        API.loginUser(this.state)
+            .then(res => this.setState({ user: res.data }))
+            .catch(err => console.log(err));
     }
 
     handleInputChange = event => {
