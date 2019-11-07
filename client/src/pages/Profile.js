@@ -63,16 +63,16 @@ class Profile extends Component {
 
     render() {
         return (
-            <div className="page">
+            <div className="profilePage">
 
                 <Column className="col-4" style={{ verticalAlign: "top" }}>
-                    <img src={this.state.user.photo} className="" alt="Profile" />
-                    
+                    <img src={this.state.user.photo} className="profilePic" alt="Profile" />
                 </Column>
+
                 <Column className="col-8">
                     {this.state.alreadyHasCity ?
-                        <div className="user_profile">
-                            <h2> Welcome {this.state.user.displayName}</h2>
+                        <div>
+                            <h1 className="welcome"> Welcome {this.state.user.displayName}</h1>
                             <label> City</label>
                             {this.state.user.city}
                             <label>State</label>
@@ -80,12 +80,12 @@ class Profile extends Component {
                         </div>
                         :
                         <div className="user_profile">
-                            <h2> Welcome {this.state.user.displayName}</h2>
-                            <label> City</label>
-                            <input name="city" value={this.state.user.city} onChange={this.handleInputChange} />
-                            <label>State</label>
-                            <input name="state" value={this.state.user.state} onChange={this.handleInputChange} />
-                            <button className="btn btn-primary" onChange={this.handleSubmit} > Update Profile</button>
+                            <h1 className="welcome"> Welcome {this.state.user.displayName}</h1>
+                            <label className="profileLabel"> City: </label>
+                            <input className = "profileInput" name="city" value={this.state.user.city} onChange={this.handleInputChange} />
+                            <label className = "profileLabel">State:</label>
+                            <input className = "profileInput" name="state" value={this.state.user.state} onChange={this.handleInputChange} />
+                            <button className="profilebtn" onChange={this.handleSubmit} > Update Profile</button>
                         </div>
                     }
                 </Column>
