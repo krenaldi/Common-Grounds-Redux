@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
+import Map from "../components/map";
+import { mapLogic } from '../utils/latlon';
 import { Link } from "react-router-dom";
+
 
 class CreateGroup extends Component {
     state = {
+        user: {},
         groups: [],
         groupname: "",
         friends: "" || [],
         location: ""
     };
+
+    componentDidMount() {
+        console.log(window.location.href);
+        const hrefSplit = window.location.href.split("/");
+        const id = hrefSplit[hrefSplit.length - 1];
+    
+        console.log(id);
+    
+        API.getallGroups(id).then(response => this.setState({ user: response.data }))
+    }
 
 
     function = () => {
@@ -37,8 +52,8 @@ class CreateGroup extends Component {
             API.createGroup({
                 groupname: this.state.groupname,
                 friends: this.state.friends,
-                location: this.state.location,
-                message: this.state.message
+                city: this.state.city,
+                state: this.state.state
             })
                 .then(res => this.loadGroups())
                 .catch(err => console.log(err));
@@ -47,6 +62,7 @@ class CreateGroup extends Component {
 
     render() {
         return (
+
             <div className= "group1" >
                 <div>
                         <h1 className="welcome">Create your Group</h1>
@@ -102,10 +118,7 @@ class CreateGroup extends Component {
               </div>
                         </form>
                     </div>
-                </div >
-                <div className= "row">
-                        <h1>Groups On My List</h1>
-                    <div className= "col">
+                    <div className= "col col-4">
 
                         {this.state.groups.length ? (
                             <ul>
