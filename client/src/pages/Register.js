@@ -30,7 +30,7 @@ class Register extends Component {
             <div className="container">
                 <div className="conatinerRegister">
                     <form onSubmit={this.handleSubmit} className="registerForm">
-                        <h2 className="formH2">Register</h2>
+                        <h2>Register</h2>
                         <div className="input-field">
                             <label htmlFor="text">Username</label>
                             <input type="text" className="inputRegister" name="username" onChange={this.handleInputChange} />
