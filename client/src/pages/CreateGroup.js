@@ -62,60 +62,47 @@ class CreateGroup extends Component {
 
     render() {
         return (
-
-            <div className= "group1" >
-                <div>
-                        <h1 className="welcome">Create your Group</h1>
-                    <div className="col group2">
+            <div className= "container-fluid" style={divStyle}>
+                <div className= "row" style={divStyle}>
+                
+              <Map />
+            
+                        
+                </div >
+                <div className= "row">
+                    <div className="col col-8">
+                <h1>Create your Group</h1>
                         <form>
-                            <div>
-                            <label className="profileLabel">
-                            Group Name:
-                            </label>
-                            </div>
-                            <div>
-                            <input className="profileInput"
+                            <input
                                 value={this.state.groupname}
                                 onChange={this.handleInputChange}
                                 name="groupname"
+                                placeholder="Group Name (required)"
                             />
-                            </div>
-
-                            <div>
-                            <label className="profileLabel">
-                            Friend's Email:
-                            </label>
-                            </div>
-                            <div>
-                            <input className="profileInput"
+                            <input
                                 value={this.state.friends}
                                 onChange={this.handleInputChange}
                                 name="friends"
+                                placeholder=" Enter your friends email (optional)"
                             />
-                            </div>
-
-<div>
-                            <label className="profileLabel">
-                            Location:
-                            </label>
-                            </div>
-
-                            <div>
-                            <input className="profileInput"
-                                value={this.state.location}
+                            <input
+                                value={this.state.city}
                                 onChange={this.handleInputChange}
-                                name="location"
+                                name="city"
+                                placeholder="city (required)"
                             />
-                            </div>
-
-                            <div>
-                            <button className = "groupbtn"
+                            <input
+                                value={this.state.state}
+                                onChange={this.handleInputChange}
+                                name="state"
+                                placeholder="state (required)"
+                            />
+                            <button
                                 disabled={!(this.state.groupname && this.state.friends)}
                                 onClick={this.handleFormSubmit}
                             >
                                 Submit Group
               </button>
-              </div>
                         </form>
                     </div>
                     <div className= "col col-4">
@@ -136,7 +123,7 @@ class CreateGroup extends Component {
                                 ))}
                             </ul>
                         ) : (
-                                <h3>No Groups Created Yet</h3>
+                                <h3>No Groups Created yet.... !!!</h3>
                             )}
                     </div>
                 </div>
@@ -145,10 +132,9 @@ class CreateGroup extends Component {
     }
 }
 const divStyle= {
-    
+    color: 'black',
+    marginLeft: '200px',
     marginTop: '20px',
-    marginBottom:'20px',
-    marginRight:'50px',
     width: '100%'
 }
 
