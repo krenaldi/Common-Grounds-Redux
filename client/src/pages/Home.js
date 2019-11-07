@@ -33,7 +33,7 @@ const Home = () => {
                     </div>
 
                     <h5>
-                        Don't have an Account? <a className="click-here" href="url">click here</a>
+                        Don't have an Account? <a className="click-here" href="/login">click here</a>
                     </h5>
                 </div>
             </div>
