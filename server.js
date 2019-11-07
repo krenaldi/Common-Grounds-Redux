@@ -11,6 +11,8 @@ const PORT = process.env.PORT || 8080;
 
 const app = express();
 
+let user = {};
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
@@ -26,6 +28,17 @@ app.use(passport.session());
 
 // Add routes, both API and view
 app.use(routes);
+
+app.get('/user', (req, res) => {
+    console.log("getting user data");
+    res.send(user);
+});
+
+app.get('/auth/logout', (req, res) => {
+    console.log("logging out");
+    user = {};
+    res.redirect('/');
+});
 
 mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/commonground", { useNewUrlParser: true })
     .then(() => console.log("MongoDB succesfully connected"))
