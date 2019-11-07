@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Register from './Register';
-import '../style/userstyle.css';
+import '../style/style.css';
 import API from '../utils/API';
 
 class User extends Component {
