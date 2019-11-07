@@ -1,14 +1,29 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import Jumbotron from "../components/Jumbotron";
+import Map from "../components/map";
+import { mapLogic } from '../utils/latlon';
 import { Link } from "react-router-dom";
+
 
 class CreateGroup extends Component {
     state = {
+        user: {},
         groups: [],
         groupname: "",
         friends: "" || [],
         location: ""
     };
+
+    componentDidMount() {
+        console.log(window.location.href);
+        const hrefSplit = window.location.href.split("/");
+        const id = hrefSplit[hrefSplit.length - 1];
+    
+        console.log(id);
+    
+        API.getallGroups(id).then(response => this.setState({ user: response.data }))
+    }
 
 
     function = () => {
@@ -37,8 +52,8 @@ class CreateGroup extends Component {
             API.createGroup({
                 groupname: this.state.groupname,
                 friends: this.state.friends,
-                location: this.state.location,
-                message: this.state.message
+                city: this.state.city,
+                state: this.state.state
             })
                 .then(res => this.loadGroups())
                 .catch(err => console.log(err));
@@ -49,8 +64,14 @@ class CreateGroup extends Component {
         return (
             <div className= "container-fluid" style={divStyle}>
                 <div className= "row" style={divStyle}>
-                        <h1>Create your Group</h1>
-                    <div className="col">
+                
+              <Map />
+            
+                        
+                </div >
+                <div className= "row">
+                    <div className="col col-8">
+                <h1>Create your Group</h1>
                         <form>
                             <input
                                 value={this.state.groupname}
@@ -62,13 +83,19 @@ class CreateGroup extends Component {
                                 value={this.state.friends}
                                 onChange={this.handleInputChange}
                                 name="friends"
-                                placeholder=" Enter your friends email (required)"
+                                placeholder=" Enter your friends email (optional)"
                             />
                             <input
-                                value={this.state.location}
+                                value={this.state.city}
                                 onChange={this.handleInputChange}
-                                name="location"
-                                placeholder="location (Optional)"
+                                name="city"
+                                placeholder="city (required)"
+                            />
+                            <input
+                                value={this.state.state}
+                                onChange={this.handleInputChange}
+                                name="state"
+                                placeholder="state (required)"
                             />
                             <button
                                 disabled={!(this.state.groupname && this.state.friends)}
@@ -78,10 +105,7 @@ class CreateGroup extends Component {
               </button>
                         </form>
                     </div>
-                </div >
-                <div className= "row">
-                        <h1>Groups On My List</h1>
-                    <div className= "col">
+                    <div className= "col col-4">
 
                         {this.state.groups.length ? (
                             <ul>
