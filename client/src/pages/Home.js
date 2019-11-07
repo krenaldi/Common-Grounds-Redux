@@ -1,6 +1,5 @@
 import React from 'react';
 import CardList from '../components/cards/CardList';
-// import FriendsGroup from "../res/bright.jpg"
 
 
 const Home = () => {

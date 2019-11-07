@@ -9,7 +9,6 @@ $brandgray: rgb(90, 89, 89);
 $brandFont: 'Amatic SC', cursive;
 $brandBodyText: 'NotoSerif', serif;
 
-
 .caption span.border {
     color: white;
     font-family: $brandFont;
@@ -115,10 +114,10 @@ h5 {
     text-decoration: none;
     color: $brandNavy;
 
-        text { 
-            padding-left: 10px;
-            vertical-align: middle;
-        }
+        // text { 
+        //     padding-left: 10px;
+        //     vertical-align: middle;
+        // }
 
         &:hover {
             opacity: 0.5;

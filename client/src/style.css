@@ -97,6 +97,10 @@ h5 {
   text-decoration: none;
   color: #0F5C83;
 }
+.btn text {
+  padding-left: 10px;
+  vertical-align: middle;
+}
 .btn:hover {
   opacity: 0.5;
 }

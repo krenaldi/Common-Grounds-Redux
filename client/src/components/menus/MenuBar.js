@@ -17,10 +17,10 @@ const MenuBar = () => {
     return (
         <div className="menu-bar">
 
-            <div className="menu-bar-btn-row">
+            <div className="menu-bar-btn-row text-focus-in">
                 <a className="btn menu-btn" href="/">
                     {/* Common Grounds Logo */}
-                    <img
+                    <img 
                         src={CommonGroundsLogo}
                         alt="common grounds logo"
                         style={{ height: 30 }}
