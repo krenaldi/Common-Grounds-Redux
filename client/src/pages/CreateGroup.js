@@ -7,16 +7,14 @@ class CreateGroup extends Component {
         groups: [],
         groupname: "",
         friends: "" || [],
-        location: "",
-        message: ""
+        location: ""
     };
 
 
     function = () => {
         API.getGroups()
             .then(res =>
-                this.setState({ group: res.data, groupname: "", friends: "", location: "", message: "" })
-            )
+                this.setState({ group: res.data, groupname: "", friends: "", location: "" }))
             .catch(err => console.log(err));
     };
 

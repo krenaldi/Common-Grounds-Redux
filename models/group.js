@@ -2,15 +2,14 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const groupSchema = new Schema({
-    groupname: { type: String, required: true },
-     friends: String,
+    groupname: String,
+    friends: String,
     // [{ 
     //     type: Schema.Types.ObjectId,
     //     ref: 'user'
     //  }],
-    location: String,
-    message: String
-}); 
+    location: String
+});
 
 const Group = mongoose.model("group", groupSchema);
 

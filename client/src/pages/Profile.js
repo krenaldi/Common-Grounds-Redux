@@ -24,7 +24,7 @@ class Profile extends Component {
             .then(res => {
                 console.log(res.data);
                 const userData = {
-                    displayName: res.data.displayName,
+                    displayName: res.data.username,
                     photo: res.data.photo,
                     city: res.data.city || "",
                     state: res.data.state || ""
@@ -66,8 +66,8 @@ class Profile extends Component {
             <div className="page">
 
                 <Column className="col-4" style={{ verticalAlign: "top" }}>
-                    <img src="{this.state.user.photo}" className="" alt="Profile" />
-                    {this.state.user.photo}
+                    <img src={this.state.user.photo} className="" alt="Profile" />
+                    
                 </Column>
                 <Column className="col-8">
                     {this.state.alreadyHasCity ?
