@@ -1,4 +1,4 @@
-import React, { Component, useContext } from 'react';
+import React, { Component } from 'react';
 import Column from '../components/wrappers/Column';
 import API from '../utils/API';
 
