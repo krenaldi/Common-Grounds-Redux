@@ -11,8 +11,9 @@ import LogoutIcon from '@material-ui/icons/ExitToApp';
 const MenuBar = () => {
 
     const userData = useContext(UserProvider.context);
+    console.log(data);
     const loginType = !_.isEmpty(userData) ? _.find(data, d => d.name === userData.provider) : {};
-
+    console.log(loginType);
 
     return (
         <div className="menu-bar">
