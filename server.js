@@ -40,7 +40,8 @@ app.get('/auth/logout', (req, res) => {
     res.redirect('/');
 });
 
-mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/commonground", { useNewUrlParser: true })
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/commonground";
+mongoose.connect(MONGODB_URI , { useNewUrlParser: true })
     .then(() => console.log("MongoDB succesfully connected"))
     .catch(err => console.log(err));
 
