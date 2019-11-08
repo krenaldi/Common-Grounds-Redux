@@ -1,68 +1,65 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Common Grounds Redux
 
-## Available Scripts
+## Project 3 – Group 3
 
-In the project directory, you can run:
+### Rutgers Coding Bootcamp – Full Stack Development 2019
+--------------------------------------------------------
 
-### `npm start`
+#### Team Members 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+| Member Name     |   GitHub      | Link                                      |
+| --------------- |:-------------:| -----------------------------------------:|
+|  Aakash Parikh  |     ahp336    |   [Aakash](https://github.com/ahp336)     |
+| Andreas Nicolaou|  agnicolaou   |   [Andreas](https://github.com/agnicolaou)| 
+| Kris Renaldi    |    krenaldi   |   [Kris](https://github.com/krenaldi)     |
+| Zeba Tahreen    | zeba-tahreen  |   [Zeba](https://github.com/zeba-tahreen) |
+-------------------------------------------------------------------------------------
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+## Common Grounds
+#### Project Description:
+Introducing an easy and fun way to schedule a public get-together without the usual hassle. 
+Whether you're meetig up with colleagues or hanging out with friends, Common Grounds provides 
+your group with destinations in the center of each member's location. Want to meet at a restaraunt 
+that serves seafood with outdoor seating? No problem! Common Grounds will filter top-rated dining 
+while keeping an eye out on the weather in that area.
 
-### `npm test`
+Explore new areas, discover your new favorite restaurant, and share great times with your friends on Common Grounds.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Key Elements & Features:
+* Productivity/ Focus
 
-### `npm run build`
+* Motivation
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* Time Management
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+* Traffic and weather update from current location to destination of all group members. 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+## Motivation:
+How to effectively track all members location and find a common geographical center point that shows the top hangout places in that area with update of weather and map directions. This app helps you build good relationships with your old buddies to make memories or new colleague to work with no excuses.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## Tech/framework used:
+* HTML 
+* CSS with SASS
+* React
+* GoogleFonts
+* JavaScript 
+* MongoDB 
+* AJAX 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Project link:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+[Common Grounds](https://krenaldi.github.io/Project-1/)
 
-## Learn More
+---------------------------
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Copyright:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+    Aakash Parikh, Andreas Nicolaou, Kris Renaldi, Zeba Tahreen 
+[Aakash](https://github.com/ahp336),  [Andreas](https://github.com/agnicolaou),  [Kris](https://github.com/krenaldi),  [Zeba](https://github.com/zeba-tahreen)
 
-### Code Splitting
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+© 2019 All Rights Reserved
+----------------------------
 
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
